@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(identify \"/Users/luca_paparella/Documents/progetti/natural vibes 2026/kinetic-vibes-react-main/public/images/occhio.png\")",
+      "Bash(identify \"/Users/luca_paparella/Documents/progetti/natural vibes 2026/kinetic-vibes-react-main/public/images/bg-teal-hd.jpg\")",
+      "Bash(identify \"/Users/luca_paparella/Documents/progetti/natural vibes 2026/kinetic-vibes-react-main/public/images/logo-no-eye-hd.png\")",
+      "Bash(python3 -c \":*)",
+      "Bash(python3 -c \"from PIL import Image; print\\(''ok''\\)\")",
+      "Bash(node -e \"const {createCanvas, loadImage} = require\\(''canvas''\\); console.log\\(''ok''\\)\")",
+      "Bash(gh repo:*)",
+      "Bash(curl -s https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill)",
+      "Bash(npm test:*)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(kill 21680)",
+      "Bash(pkill -f node)",
+      "Bash(find /Users/luca_paparella/Downloads /Users/luca_paparella/Desktop -maxdepth 4 -name *.jpg -o -name *.jpeg -o -name *.png -o -name *.webp)"
+    ]
+  }
+}
