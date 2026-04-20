@@ -8,8 +8,9 @@ const T = {
   it: {
     title: "Biglietti",
     sub: "",
-    tierName: "Early Bird",
-    price: "€45",
+    tierName: "Regular",
+    price: "€55",
+    oldPrice: "€45",
     passSub: "3 Days Pass + Free Camping",
     features: ["Accesso 3 giorni", "Free Camping", "Docce", "Punti acqua"],
     cta: "Acquista su Xceed",
@@ -19,8 +20,9 @@ const T = {
   en: {
     title: "Tickets",
     sub: "",
-    tierName: "Early Bird",
-    price: "€45",
+    tierName: "Regular",
+    price: "€55",
+    oldPrice: "€45",
     passSub: "3 Days Pass + Free Camping",
     features: ["3-day access", "Free Camping", "Showers", "Water points"],
     cta: "Buy on Xceed",
@@ -36,15 +38,22 @@ export default function TicketsSection() {
   return (
     <section id="tickets" className="relative min-h-screen flex items-center">
       <div className="container mx-auto px-4 py-24">
-        <div className="max-w-2xl mx-auto mb-16 px-6 py-8 rounded-2xl glass-raw text-center relative z-10">
+        <div className="max-w-2xl mx-auto mb-16 px-6 py-8 paper-card text-center relative z-10">
           <h2 className={`text-2xl sm:text-3xl md:text-4xl font-heading font-black text-foreground mb-2 ${shadow}`}>{t.title}</h2>
           <p className={`text-foreground font-bold ${shadow}`}>{t.sub}</p>
         </div>
 
         <div className="flex justify-center max-w-md mx-auto relative z-10">
-          <div className="w-full rounded-xl p-5 sm:p-8 border-2 border-primary/60 glass-raw glow-gold relative transition-all">
+          <div className="w-full p-5 sm:p-8 paper-card glow-gold relative transition-all">
             <p className={`text-sm uppercase tracking-widest text-primary font-extrabold mb-1 ${shadow}`}>{t.tierName}</p>
-            <p className={`text-4xl sm:text-5xl font-heading font-black text-foreground mb-2 ${shadow}`}>{t.price}</p>
+            <p className={`flex items-baseline gap-3 mb-2 ${shadow}`}>
+              <span className="text-xl sm:text-2xl font-heading font-bold text-foreground/50 line-through decoration-2">
+                {t.oldPrice}
+              </span>
+              <span className="text-4xl sm:text-5xl font-heading font-black text-foreground">
+                {t.price}
+              </span>
+            </p>
             <p className={`text-sm text-foreground font-bold mb-6 ${shadow}`}>{t.passSub}</p>
             <ul className="space-y-3 mb-8">
               {t.features.map((f) => (
@@ -65,7 +74,7 @@ export default function TicketsSection() {
           </div>
         </div>
 
-        <div className="mt-8 max-w-md mx-auto text-center px-4 py-3 rounded-xl glass-raw relative z-10">
+        <div className="mt-8 max-w-md mx-auto text-center px-4 py-3 paper-card relative z-10">
           <p className={`text-xs text-foreground font-bold ${shadow}`}>{t.info}</p>
           <p className={`text-xs text-foreground font-bold mt-1 ${shadow}`}>{t.info2}</p>
         </div>

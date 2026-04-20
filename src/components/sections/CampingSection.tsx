@@ -61,7 +61,7 @@ export default function CampingSection() {
   return (
     <section id="camping" className="relative min-h-screen flex items-center">
       <div className="container mx-auto px-4 md:px-16 lg:px-24 py-24 relative z-10">
-        <div className="max-w-2xl mx-auto mb-16 px-6 py-8 rounded-2xl glass-raw text-center relative">
+        <div className="max-w-2xl mx-auto mb-16 px-6 py-8 paper-card text-center relative">
           <h2 className={`text-2xl sm:text-3xl md:text-4xl font-heading font-black text-foreground mb-2 ${shadow}`}>{t.title}</h2>
           <p className={`text-foreground font-bold max-w-xl mx-auto leading-relaxed ${shadow}`}>{t.sub}</p>
         </div>
@@ -84,7 +84,7 @@ export default function CampingSection() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto mb-10 rounded-2xl glass-raw px-6 py-5 text-center">
+        <div className="max-w-4xl mx-auto mb-10 paper-card px-6 py-5 text-center">
           <p className={`text-base md:text-lg font-heading font-black text-primary mb-2 ${shadow}`}>{t.accessTitle}</p>
           <p className={`text-foreground font-bold leading-relaxed ${shadow}`}>{t.accessBody}</p>
         </div>
@@ -93,7 +93,7 @@ export default function CampingSection() {
           {t.features.map((feat) => (
             <div
               key={feat.title}
-              className="rounded-xl p-6 glass-raw relative hover:border-primary/70 transition-colors group"
+              className="p-6 paper-card relative hover:border-primary/70 transition-colors group"
             >
               <feat.icon className={`w-7 h-7 text-primary mb-3 group-hover:scale-110 transition-transform ${shadow}`} />
               <h3 className={`font-heading font-extrabold text-foreground mb-2 ${shadow}`}>{feat.title}</h3>

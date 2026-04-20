@@ -199,7 +199,7 @@ export default function GallerySection() {
   return (
     <section id="gallery" className="relative min-h-screen flex items-center">
       <div className="container mx-auto px-4 py-24">
-        <div className="max-w-2xl mx-auto mb-16 px-6 py-8 rounded-2xl glass-raw text-center relative z-10">
+        <div className="max-w-2xl mx-auto mb-16 px-6 py-8 paper-card text-center relative z-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-black text-foreground mb-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
             📸 Gallery
           </h2>
@@ -213,7 +213,7 @@ export default function GallerySection() {
             type="button"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
-            className="glass-raw relative w-full rounded-2xl overflow-hidden cursor-pointer group text-left"
+            className="paper-card relative w-full overflow-hidden cursor-pointer group text-left"
             onClick={() => setGalleryOpen(true)}
             aria-label={lang === "it" ? "Apri la gallery 2025" : "Open the 2025 gallery"}
           >
