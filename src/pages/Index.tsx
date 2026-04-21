@@ -6,6 +6,7 @@ import LineupSection from "@/components/sections/LineupSection";
 import TicketsSection from "@/components/sections/TicketsSection";
 import CampingSection from "@/components/sections/CampingSection";
 import GallerySection from "@/components/sections/GallerySection";
+import VolontariCallout from "@/components/VolontariCallout";
 import LogoMascot from "@/components/LogoMascot";
 import SiteFooter from "@/components/SiteFooter";
 import EasterEggManager from "@/components/easter-eggs/EasterEggManager";
@@ -40,6 +41,7 @@ export default function Index() {
         <TicketsSection />
         <CampingSection />
         <GallerySection />
+        <VolontariCallout />
         <SiteFooter />
         <EasterEggManager />
       </main>
