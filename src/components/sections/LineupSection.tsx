@@ -9,12 +9,16 @@ const T = {
   en: { title: "Lineup", release: "1st Release", more: "...more TBA", location: "IL PASSEL _ ANGROGNA (TO)" },
 };
 
-const HEADLINERS = ["C.RU.Z", "TAMBURI NERI", "ROSA CALIX"];
+const HEADLINERS = ["P.O (live)", "C.R.U.Z", "TAMBURI NERI (hybrid set)", "ROSA CALIX", "LUKR RANGE"];
 
 const OTHERS = [
-  "BEN-UR", "CHALANGA (live)", "CLUSTER B", "FEELDAMUSIC",
-  "HARTMANN", "HOT LINES", "NEEKA", "PEDROINE",
-  "POLIZEI", "RASHA", "SEVEN SINS", "SICK SEEK", "VALLE",
+  "BEN-UR", "BRANDRE (live)", "CHALANGA (live)", "CLAN RENÒ (live)",
+  "CLUSTER B", "DAVIDE LEONE", "DUALISMO SOUND", "EKA",
+  "FALCO", "FEELDAMUSIC", "HARTMANN", "HOT LINES",
+  "LUCE CLANDESTINA", "NEECA", "PEDROINE", "POLIZEI",
+  "RASHA", "RAW UNIT", "RED ROB", "ROTTENZ (live)",
+  "SANTA", "SEVEN SINS", "SICK SEEK", "SSPECTRUM",
+  "STILLALIVE", "VALLE",
 ];
 
 /* Character-by-character reveal for headliner names */
@@ -57,7 +61,7 @@ function OthersGrid({ items }: { items: string[] }) {
   return (
     <div
       ref={ref}
-      className="flex flex-wrap justify-center gap-x-5 gap-y-2 py-5 px-4"
+      className="flex flex-wrap justify-center gap-x-8 gap-y-4 py-6 px-4"
       aria-label={items.join(", ")}
     >
       {items.map((name, i) => (
