@@ -13,6 +13,7 @@ const NAV_ITEMS: { id: SectionMode; label: { it: string; en: string } }[] = [
   { id: "lineup", label: { it: "Lineup", en: "Lineup" } },
   { id: "tickets", label: { it: "Tickets", en: "Tickets" } },
   { id: "camping", label: { it: "Camping", en: "Camping" } },
+  { id: "faq", label: { it: "F.A.Q", en: "F.A.Q" } },
   { id: "gallery", label: { it: "Gallery", en: "Gallery" } },
   { id: "work", label: { it: "Open Call", en: "Open Call" } },
 ];

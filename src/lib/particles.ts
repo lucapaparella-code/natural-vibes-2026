@@ -1,2 +1,2 @@
 // ─── Types for section modes ───
-export type SectionMode = "hero" | "info" | "lineup" | "tickets" | "camping" | "gallery" | "work";
+export type SectionMode = "hero" | "info" | "lineup" | "tickets" | "camping" | "faq" | "gallery" | "work";
