@@ -5,6 +5,7 @@ import InfoSection from "@/components/sections/InfoSection";
 import LineupSection from "@/components/sections/LineupSection";
 import TicketsSection from "@/components/sections/TicketsSection";
 import CampingSection from "@/components/sections/CampingSection";
+import FAQSection from "@/components/sections/FAQSection";
 import GallerySection from "@/components/sections/GallerySection";
 import VolontariCallout from "@/components/VolontariCallout";
 import LogoMascot from "@/components/LogoMascot";
@@ -40,6 +41,7 @@ export default function Index() {
         <LineupSection />
         <TicketsSection />
         <CampingSection />
+        <FAQSection />
         <GallerySection />
         <VolontariCallout />
         <SiteFooter />
