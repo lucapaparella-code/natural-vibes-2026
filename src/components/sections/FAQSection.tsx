@@ -24,7 +24,7 @@ const T = {
           },
           {
             q: "Dove si svolge?",
-            a: "L'evento si svolge a IL PASSEL, ANGRONA (TO). Campeggio e area festival sono vicine ma separate.",
+            a: "L'evento si svolge a IL PASSEL, ANGRONA (TO). L'area camping è all'interno del festival.",
           },
           {
             q: "Sono ammessi animali?",
@@ -53,7 +53,7 @@ const T = {
           },
           {
             q: "Quali servizi ci sono nel camping?",
-            a: "Nel camping troverai: un distributore di acqua potabile gratuita, bagni chimici (uno accessibile per le carrozzine). Non ci sono docce. Ti consigliamo di portarti: powerbank, spray anti-zanzare, felpa e pantaloni lunghi. Ricordati di fissare bene la tenda (il vento può essere forte) e una torcia frontale. È vietato accendere fuochi liberi.",
+            a: "Nel camping troverai: un distributore di acqua potabile gratuita, bagni chimici (uno accessibile per le carrozzine) e docce. Ti consigliamo di portarti: powerbank, spray anti-zanzare, felpa e pantaloni lunghi. Ricordati di fissare bene la tenda (il vento può essere forte) e una torcia frontale. È vietato accendere fuochi liberi.",
           },
         ],
       },
@@ -71,7 +71,7 @@ const T = {
         items: [
           {
             q: "Ci sono opzioni per mangiare?",
-            a: "Sì, un'area food sarà presente all'interno del festival (Cantina Social) che servirà colazione, pranzo e cena con opzioni veg-friendly per tutta la durata dell'evento. Puoi anche portarti il cibo da casa, ma ricorda che acquistando in loco stai supportando delle piccole realtà.",
+            a: "Sì, è possibile mangiare al Passel all'interno del festival. Puoi anche portarti il cibo da casa, ma ricorda che acquistando in loco stai supportando delle piccole realtà.",
           },
           {
             q: "Posso portare bottiglie di vetro?",
@@ -121,7 +121,7 @@ const T = {
           },
           {
             q: "Where is it?",
-            a: "The event takes place at IL PASSEL, ANGRONA (TO). Camping and festival area are close but separate.",
+            a: "The event takes place at IL PASSEL, ANGRONA (TO). The camping area is inside the festival.",
           },
           {
             q: "Are pets allowed?",
@@ -150,7 +150,7 @@ const T = {
           },
           {
             q: "What facilities are in the camping?",
-            a: "In the camping you'll find: free drinking water dispenser, chemical toilets (one accessible for wheelchairs). There are no showers. We recommend bringing: powerbank, anti-mosquito spray, fleece and long pants. Remember to secure your tent well (wind can be strong) and bring a headlamp. Open fires are strictly prohibited.",
+            a: "In the camping you'll find: free drinking water dispenser, chemical toilets (one accessible for wheelchairs) and showers. We recommend bringing: powerbank, anti-mosquito spray, fleece and long pants. Remember to secure your tent well (wind can be strong) and bring a headlamp. Open fires are strictly prohibited.",
           },
         ],
       },
@@ -168,7 +168,7 @@ const T = {
         items: [
           {
             q: "Is there food available?",
-            a: "Yes, a food area (Cantina Social) will be present inside the festival serving breakfast, lunch and dinner with veg-friendly options for the entire duration of the event. You can also bring your own food from home, but remember that buying locally supports small businesses.",
+            a: "Yes, food is available at Il Passel inside the festival. You can also bring your own food from home, but remember that buying locally supports small businesses.",
           },
           {
             q: "Can I bring glass bottles?",
