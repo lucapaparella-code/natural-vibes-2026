@@ -14,7 +14,6 @@ const T = {
     passSub: "3 Days Pass + Free Camping",
     features: ["Accesso 3 giorni", "Free Camping", "Docce", "Punti acqua"],
     cta: "Acquista su Xceed",
-    info: "+50h di musica · 3 stage · +30 DJ & live acts · Drink & Food (veg friendly) · Performance Arts",
     info2: "Apertura porte: 12:00 · Età min. 18+",
   },
   en: {
@@ -26,7 +25,6 @@ const T = {
     passSub: "3 Days Pass + Free Camping",
     features: ["3-day access", "Free Camping", "Showers", "Water points"],
     cta: "Buy on Xceed",
-    info: "+50h of music · 3 stages · +30 DJs & live acts · Drink & Food (veg friendly) · Performance Arts",
     info2: "Doors open: 12:00 · Min. age 18+",
   },
 };
@@ -75,8 +73,7 @@ export default function TicketsSection() {
         </div>
 
         <div className="mt-8 max-w-md mx-auto text-center px-4 py-3 paper-card relative z-10">
-          <p className={`text-xs text-foreground font-bold ${shadow}`}>{t.info}</p>
-          <p className={`text-xs text-foreground font-bold mt-1 ${shadow}`}>{t.info2}</p>
+          <p className={`text-xs text-foreground font-bold ${shadow}`}>{t.info2}</p>
         </div>
       </div>
     </section>

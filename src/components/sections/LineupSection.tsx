@@ -5,8 +5,8 @@ import { useLang } from "@/components/LangToggle";
 const shadow = "drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]";
 
 const T = {
-  it: { title: "Lineup", release: "1st Release", more: "...more TBA", location: "IL PASSEL _ ANGROGNA (TO)" },
-  en: { title: "Lineup", release: "1st Release", more: "...more TBA", location: "IL PASSEL _ ANGROGNA (TO)" },
+  it: { title: "Lineup" },
+  en: { title: "Lineup" },
 };
 
 const HEADLINERS = ["P.O (live)", "C.R.U.Z", "TAMBURI NERI (hybrid set)", "ROSA CALIX", "LUKR RANGE"];
@@ -15,7 +15,7 @@ const OTHERS = [
   "BEN-UR", "BRANDRE (live)", "CHALANGA (live)", "CLAN RENÒ (live)",
   "CLUSTER B", "DAVIDE LEONE", "DUALISMO SOUND", "EKA",
   "FALCO", "FEELDAMUSIC", "HARTMANN", "HOT LINES",
-  "LUCE CLANDESTINA", "NEECA", "PEDROINE", "POLIZEI",
+  "LUCE CLANDESTINA", "MARCO PIZZINI", "NEECA", "PEDROINE", "POLIZEI",
   "RASHA", "RAW UNIT", "RED ROB", "ROTTENZ (live)",
   "SANTA", "SEVEN SINS", "SICK SEEK", "SSPECTRUM",
   "STILLALIVE", "VALLE",
@@ -106,13 +106,6 @@ export default function LineupSection() {
             >
               {t.title}
             </h2>
-            <div className="flex items-center gap-3 mt-3 mb-0 justify-center">
-              <div className="h-px flex-1 bg-primary/50" />
-              <span className={`text-xs sm:text-sm font-heading font-bold text-primary uppercase tracking-[0.2em] ${shadow}`}>
-                {t.release}
-              </span>
-              <div className="h-px flex-1 bg-primary/50" />
-            </div>
           </div>
 
           {/* Lineup block */}
@@ -135,27 +128,8 @@ export default function LineupSection() {
             {/* Others — staggered grid, all visible */}
             <OthersGrid items={OTHERS} />
 
-            <div className="h-px bg-foreground/10 mx-4" />
-
-            {/* More TBA */}
-            <motion.div
-              className={`py-3 ${shadow}`}
-              initial={reduce ? false : { opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 1.2 }}
-            >
-              <span className="text-sm sm:text-base font-heading font-bold text-muted-foreground italic">
-                {t.more}
-              </span>
-            </motion.div>
           </div>
 
-          {/* Location footer */}
-          <div className="px-8 py-4">
-            <p className={`text-xs sm:text-sm font-heading font-bold text-foreground/70 uppercase tracking-[0.15em] ${shadow}`}>
-              {t.location}
-            </p>
-          </div>
         </motion.div>
 
         {/* Stage photos */}

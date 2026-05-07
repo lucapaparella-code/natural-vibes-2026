@@ -8,23 +8,17 @@ const shadow = "drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]";
 const T = {
   it: {
     title: "F.A.Q",
-    general: "INFORMAZIONI GENERALI",
-    camping: "CAMPEGGIO",
-    tickets: "BIGLIETTI",
-    reach: "COME ARRIVARE",
-    food: "FOOD & BEVERAGE",
-    other: "ALTRO",
     faqs: [
       {
         category: "INFORMAZIONI GENERALI",
         items: [
           {
             q: "Quando si svolge Natural Vibes?",
-            a: "Natural Vibes 2026 si svolge dal 19 al 21 GIUGNO. Il campeggio apre dalle 12:00 di sabato 19/06 e chiude alle 12:00 di lunedì 21/06. L'area festival apre alle 15:00 di sabato e chiude a mezzanotte di domenica.",
+            a: "Natural Vibes 2026 si svolge dal 19 al 22 GIUGNO. Il campeggio apre venerdì 19/06 e chiude lunedì 22/06 alle 12:00.",
           },
           {
             q: "Dove si svolge?",
-            a: "L'evento si svolge a IL PASSEL, ANGRONA (TO). L'area camping è all'interno del festival.",
+            a: "L'evento si svolge a IL PASSEL, ANGROGNA (TO).",
           },
           {
             q: "Sono ammessi animali?",
@@ -36,12 +30,8 @@ const T = {
         category: "CAMPEGGIO",
         items: [
           {
-            q: "Come prenotare il posto tenda?",
-            a: "Una volta acquistato il biglietto è possibile prenotare il proprio posto tenda.",
-          },
-          {
-            q: "Posso portare tenda o furgone?",
-            a: "Sì, è prevista un'area dove potrai montare la tua tenda o parcheggiare il tuo furgone. Se decidi di portare un furgone, segnalalo a naturalvibesopenair.info@gmail.com.",
+            q: "Posso portare tenda, furgone o camper?",
+            a: "Sì, è prevista un'area dove potrai parcheggiare il tuo furgone o camper. Segnalalo preventivamente a naturalvibesopenair.info@gmail.com.",
           },
           {
             q: "Servono i biglietti anche per il camping?",
@@ -51,10 +41,6 @@ const T = {
             q: "Avete tende a noleggio?",
             a: "No, non abbiamo tende disponibili a noleggio.",
           },
-          {
-            q: "Quali servizi ci sono nel camping?",
-            a: "Nel camping troverai: un distributore di acqua potabile gratuita, bagni chimici (uno accessibile per le carrozzine) e docce. Ti consigliamo di portarti: powerbank, spray anti-zanzare, felpa e pantaloni lunghi. Ricordati di fissare bene la tenda (il vento può essere forte) e una torcia frontale. È vietato accendere fuochi liberi.",
-          },
         ],
       },
       {
@@ -62,7 +48,7 @@ const T = {
         items: [
           {
             q: "Quali tipi di biglietto sono disponibili?",
-            a: "Ci sono 2 tipi di biglietto: uno valido per sabato e domenica, e uno valido per domenica a partire dalle 12:00.",
+            a: "Solo venerdì: €25 · Solo sabato: €30 · Sabato + domenica: €55 · Solo domenica: disponibile · 3 giorni (venerdì + sabato + domenica): Early €45 / Regular €55 / Last €65.",
           },
         ],
       },
@@ -79,49 +65,21 @@ const T = {
           },
         ],
       },
-      {
-        category: "COME ARRIVARE",
-        items: [
-          {
-            q: "In auto: come si arriva?",
-            a: "IL PASSEL è situato ad ANGRONA (TO). Disponiamo di parcheggio gratuito. Consulta le mappe per le indicazioni precise: https://maps.google.com/?q=45.113079,7.261786",
-          },
-          {
-            q: "In treno: come si arriva?",
-            a: "Puoi arrivare con il treno partendo da Torino e scendendo alle stazioni della zona. Sul nostro canale Telegram (link in bio) è attivo un servizio per cercare/offrire passaggi in auto.",
-          },
-        ],
-      },
-      {
-        category: "ALTRO",
-        items: [
-          {
-            q: "Ho altre domande, come contattarvi?",
-            a: "Contattaci tramite i nostri social media o via email a naturalvibesopenair.info@gmail.com. Troverai anche un canale Telegram nel link in bio per cercare/offrire passaggi in auto.",
-          },
-        ],
-      },
     ],
   },
   en: {
     title: "F.A.Q",
-    general: "GENERAL INFO",
-    camping: "CAMPING",
-    tickets: "TICKETS",
-    reach: "HOW TO GET HERE",
-    food: "FOOD & BEVERAGE",
-    other: "OTHER",
     faqs: [
       {
         category: "GENERAL INFO",
         items: [
           {
             q: "When is Natural Vibes?",
-            a: "Natural Vibes 2026 takes place from June 19 to 21. Camping opens at 12:00 on Saturday 19/06 and closes at 12:00 on Monday 21/06. The festival area opens at 15:00 on Saturday and closes at midnight on Sunday.",
+            a: "Natural Vibes 2026 takes place from June 19 to 22. Camping opens on Friday 19/06 and closes on Monday 22/06 at 12:00.",
           },
           {
             q: "Where is it?",
-            a: "The event takes place at IL PASSEL, ANGRONA (TO). The camping area is inside the festival.",
+            a: "The event takes place at IL PASSEL, ANGROGNA (TO).",
           },
           {
             q: "Are pets allowed?",
@@ -133,12 +91,8 @@ const T = {
         category: "CAMPING",
         items: [
           {
-            q: "How do I book a tent spot?",
-            a: "Once you purchase a ticket you can book your own tent spot.",
-          },
-          {
-            q: "Can I bring a tent or campervan?",
-            a: "Yes, there is an area where you can set up your tent or park your campervan. If you're bringing a campervan, please report it to naturalvibesopenair.info@gmail.com.",
+            q: "Can I bring a tent, van or campervan?",
+            a: "Yes, there is an area where you can park your van or campervan. Please report it in advance to naturalvibesopenair.info@gmail.com.",
           },
           {
             q: "Do I need a ticket for camping?",
@@ -148,10 +102,6 @@ const T = {
             q: "Do you have tents for rent?",
             a: "No, we don't have tents available for rent.",
           },
-          {
-            q: "What facilities are in the camping?",
-            a: "In the camping you'll find: free drinking water dispenser, chemical toilets (one accessible for wheelchairs) and showers. We recommend bringing: powerbank, anti-mosquito spray, fleece and long pants. Remember to secure your tent well (wind can be strong) and bring a headlamp. Open fires are strictly prohibited.",
-          },
         ],
       },
       {
@@ -159,7 +109,7 @@ const T = {
         items: [
           {
             q: "What types of tickets are available?",
-            a: "There are 2 types of tickets: one valid for Saturday and Sunday, and one valid for Sunday from 12:00 onwards.",
+            a: "Friday only: €25 · Saturday only: €30 · Saturday + Sunday: €55 · Sunday only: available · 3 days (Friday + Saturday + Sunday): Early €45 / Regular €55 / Last €65.",
           },
         ],
       },
@@ -173,28 +123,6 @@ const T = {
           {
             q: "Can I bring glass bottles?",
             a: "No, glass is strictly prohibited inside the festival area. You can bring water bottles as long as they are not made of glass.",
-          },
-        ],
-      },
-      {
-        category: "HOW TO GET HERE",
-        items: [
-          {
-            q: "How do I get there by car?",
-            a: "IL PASSEL is located in ANGRONA (TO). We have free parking. Check the map for precise directions: https://maps.google.com/?q=45.113079,7.261786",
-          },
-          {
-            q: "How do I get there by train?",
-            a: "You can take a train from Turin. On our Telegram channel (link in bio) there's an active service to find/offer car rides.",
-          },
-        ],
-      },
-      {
-        category: "OTHER",
-        items: [
-          {
-            q: "I have other questions, how do I contact you?",
-            a: "Contact us through our social media or email at naturalvibesopenair.info@gmail.com. You'll also find a Telegram channel in the bio link to find/offer car rides.",
           },
         ],
       },
@@ -263,7 +191,6 @@ export default function FAQSection() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl mx-auto"
         >
-          {/* Title */}
           <h2
             className={`font-heading font-black text-foreground uppercase tracking-wide text-center mb-12 ${shadow}`}
             style={{ fontSize: "clamp(2rem, 7vw, 3.5rem)" }}
@@ -271,7 +198,6 @@ export default function FAQSection() {
             {t.title}
           </h2>
 
-          {/* FAQ Categories */}
           <div className="space-y-12">
             {t.faqs.map((category, idx) => (
               <motion.div
@@ -282,14 +208,11 @@ export default function FAQSection() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="paper-card overflow-hidden"
               >
-                {/* Category Header */}
                 <div className="px-6 py-4 bg-primary/10 border-b border-primary/20">
                   <h3 className={`font-heading font-bold text-primary uppercase tracking-wider ${shadow}`}>
                     {category.category}
                   </h3>
                 </div>
-
-                {/* FAQ Items */}
                 <div>
                   {category.items.map((item, itemIdx) => (
                     <FAQItem
@@ -304,7 +227,6 @@ export default function FAQSection() {
             ))}
           </div>
 
-          {/* Contact CTA */}
           <motion.div
             initial={reduce ? false : { opacity: 0 }}
             whileInView={{ opacity: 1 }}
