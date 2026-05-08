@@ -141,7 +141,7 @@ export default function InfoSection() {
         <RevealBlock delay={0.1}>
           <div className="max-w-3xl mx-auto grid grid-cols-3 gap-3" style={{ height: "clamp(9rem, 22vw, 14rem)" }}>
             <PhotoHover src="/images/nv/disco-ball.jpg" alt="Disco ball" className="h-full" />
-            <PhotoHover src="/images/nv/dancing-day.jpg" alt="Persone che ballano" className="h-full" />
+            <PhotoHover src="/images/nv/crowd-lasers.jpg" alt="Dancefloor con laser" className="h-full" />
             <PhotoHover src="/images/nv/light-beams.jpg" alt="Raggi di luce" className="h-full" />
           </div>
         </RevealBlock>

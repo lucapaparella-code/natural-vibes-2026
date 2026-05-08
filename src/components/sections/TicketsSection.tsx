@@ -72,9 +72,6 @@ export default function TicketsSection() {
           </div>
         </div>
 
-        <div className="mt-8 max-w-md mx-auto text-center px-4 py-3 paper-card relative z-10">
-          <p className={`text-xs text-foreground font-bold ${shadow}`}>{t.info2}</p>
-        </div>
       </div>
     </section>
   );

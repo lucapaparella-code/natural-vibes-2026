@@ -14,7 +14,7 @@ const T = {
         items: [
           {
             q: "Quando si svolge Natural Vibes?",
-            a: "Natural Vibes 2026 si svolge dal 19 al 22 GIUGNO. Il campeggio apre venerdì 19/06 e chiude lunedì 22/06 alle 12:00.",
+            a: "Natural Vibes 2026 si svolge dal 19 al 22 GIUGNO. Il campeggio apre venerdì 19/06 alle 12:00 e chiude lunedì 22/06 alle 12:00.",
           },
           {
             q: "Dove si svolge?",
@@ -30,16 +30,12 @@ const T = {
         category: "CAMPEGGIO",
         items: [
           {
-            q: "Posso portare tenda, furgone o camper?",
+            q: "Posso venire in furgone o camper?",
             a: "Sì, è prevista un'area dove potrai parcheggiare il tuo furgone o camper. Segnalalo preventivamente a naturalvibesopenair.info@gmail.com.",
           },
           {
-            q: "Servono i biglietti anche per il camping?",
-            a: "Sì, non è possibile accedere all'area camping senza il biglietto del festival.",
-          },
-          {
-            q: "Avete tende a noleggio?",
-            a: "No, non abbiamo tende disponibili a noleggio.",
+            q: "Posso accedere al camping?",
+            a: "Il camping è accessibile solo con i biglietti multi-giorno (2 Days Pass o 3 Days Pass). I biglietti singola giornata non includono l'accesso al camping.",
           },
         ],
       },
@@ -48,7 +44,7 @@ const T = {
         items: [
           {
             q: "Quali tipi di biglietto sono disponibili?",
-            a: "Solo venerdì: €25 · Solo sabato: €30 · Sabato + domenica: €55 · Solo domenica: disponibile · 3 giorni (venerdì + sabato + domenica): Early €45 / Regular €55 / Last €65.",
+            a: "Venerdì (Friday Ticket): €25 · Domenica (Sunday Ticket): €30 · Sabato + Domenica (2 Days Pass + Camping): €60 · 3 giorni Early Bird: €45 (esaurito) · 3 giorni Regular (+ Camping): €55 · 3 giorni Last Call (+ Camping): €65 · Party Pack 5 persone (3 Days + Camping): €60 a persona (€300 totali).",
           },
         ],
       },
@@ -75,7 +71,7 @@ const T = {
         items: [
           {
             q: "When is Natural Vibes?",
-            a: "Natural Vibes 2026 takes place from June 19 to 22. Camping opens on Friday 19/06 and closes on Monday 22/06 at 12:00.",
+            a: "Natural Vibes 2026 takes place from June 19 to 22. Camping opens on Friday 19/06 at 12:00 and closes on Monday 22/06 at 12:00.",
           },
           {
             q: "Where is it?",
@@ -91,16 +87,12 @@ const T = {
         category: "CAMPING",
         items: [
           {
-            q: "Can I bring a tent, van or campervan?",
+            q: "Can I come with a van or campervan?",
             a: "Yes, there is an area where you can park your van or campervan. Please report it in advance to naturalvibesopenair.info@gmail.com.",
           },
           {
-            q: "Do I need a ticket for camping?",
-            a: "Yes, you cannot access the camping area without a festival ticket.",
-          },
-          {
-            q: "Do you have tents for rent?",
-            a: "No, we don't have tents available for rent.",
+            q: "Can I access the camping?",
+            a: "Camping is only accessible with multi-day tickets (2 Days Pass or 3 Days Pass). Single-day tickets do not include camping access.",
           },
         ],
       },
@@ -109,7 +101,7 @@ const T = {
         items: [
           {
             q: "What types of tickets are available?",
-            a: "Friday only: €25 · Saturday only: €30 · Saturday + Sunday: €55 · Sunday only: available · 3 days (Friday + Saturday + Sunday): Early €45 / Regular €55 / Last €65.",
+            a: "Friday Ticket: €25 · Sunday Ticket: €30 · Saturday + Sunday (2 Days Pass + Camping): €60 · 3 Days Early Bird: €45 (sold out) · 3 Days Regular (+ Camping): €55 · 3 Days Last Call (+ Camping): €65 · Party Pack 5 people (3 Days + Camping): €60 p.p. (€300 total).",
           },
         ],
       },
