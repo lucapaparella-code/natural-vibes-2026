@@ -18,8 +18,8 @@ export default {
     extend: {
       fontFamily: {
         heading: ['"Auge"', "sans-serif"],
-        body: ['"Nexa"', "sans-serif"],
-        nexa: ['"Nexa"', "sans-serif"],
+        body: ['"DM Sans"', "sans-serif"],
+        nexa: ['"DM Sans"', "sans-serif"],
         auge: ['"Auge"', "sans-serif"],
       },
       colors: {
