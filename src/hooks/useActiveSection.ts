@@ -1,39 +1,30 @@
 import { useEffect, useState } from "react";
 import type { SectionMode } from "@/lib/particles";
 
-// TODO: Change SECTION_IDS or THRESHOLD to adjust behaviour
-const SECTION_IDS: SectionMode[] = ["hero", "info", "lineup", "tickets", "camping", "gallery", "work"];
-const THRESHOLD = 0.45; // TODO: Adjust IntersectionObserver threshold
+const SECTION_IDS: SectionMode[] = ["hero", "info", "gallery"];
 
 export function useActiveSection(): SectionMode {
   const [active, setActive] = useState<SectionMode>("hero");
-
   useEffect(() => {
-    const elements = SECTION_IDS.map((id) => document.getElementById(id)).filter(
-      Boolean
-    ) as HTMLElement[];
-
-    if (elements.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Pick the entry with largest intersection ratio
-        let best: IntersectionObserverEntry | null = null;
-        entries.forEach((e) => {
-          if (e.isIntersecting && (!best || e.intersectionRatio > best.intersectionRatio)) {
-            best = e;
-          }
-        });
-        if (best) {
-          setActive(best.target.id as SectionMode);
-        }
-      },
-      { threshold: THRESHOLD }
-    );
-
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      let current: SectionMode = "hero";
+      for (const id of SECTION_IDS) {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= window.innerHeight * .3) current = id;
+      }
+      setActive(current);
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      cancelAnimationFrame(frame);
+    };
   }, []);
-
   return active;
 }

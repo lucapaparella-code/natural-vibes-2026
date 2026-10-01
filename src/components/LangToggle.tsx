@@ -24,8 +24,8 @@ export function LangToggle() {
   return (
     <button
       onClick={toggle}
-      className="fixed top-20 right-4 z-50 flex items-center gap-2 px-3 py-2 rounded-full bg-card/60 backdrop-blur-xl border-2 border-primary/60 text-sm font-bold text-foreground drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] hover:bg-card/80 transition-colors"
-      aria-label="Toggle language"
+      className="lang-toggle min-h-11 fixed top-20 right-4 z-50 flex items-center gap-2 px-3 py-2 rounded-full bg-card/60 backdrop-blur-xl border-2 border-primary/60 text-sm font-bold text-foreground drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] hover:bg-card/80 transition-colors"
+      aria-label={lang === "it" ? "Passa alla lingua inglese" : "Switch to Italian"}
     >
       {lang === "it" ? "🇮🇹 IT" : "🇬🇧 EN"}
     </button>

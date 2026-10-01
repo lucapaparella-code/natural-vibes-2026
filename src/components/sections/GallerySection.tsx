@@ -9,41 +9,22 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import { useLang } from "@/components/LangToggle";
-import { GALLERY_FILES } from "@/generated/galleryManifest";
+import { GALLERY_2026_FILES } from "@/generated/gallery2026Manifest";
 
 const INITIAL_BATCH = 12;
 const BATCH_SIZE = 8;
 
-function toTitleCase(value: string) {
-  return value
-    .replace(/^\d+[-_]?/, "")
-    .replace(/[-_]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/\b\w/g, (char) => char.toUpperCase());
-}
-
-function makeEntry(filename: string) {
-  const stem = filename.replace(/\.[^.]+$/, "");
-  const numberedMatch = stem.match(/Naturalvibes_2025_©AndreaTerlizzi_(\d+)$/);
-
-  if (numberedMatch) {
-    const number = Number(numberedMatch[1]);
-    return {
-      id: stem,
-      src: `/images/gallery/${filename}`,
-      alt: `Natural Vibes 2025 — foto ${number}`,
-    };
-  }
-
+function makeEntry(filename: string, index: number) {
+  const path = `/foto%2020266/${encodeURIComponent(filename)}`;
   return {
-    id: stem,
-    src: `/images/gallery/${filename}`,
-    alt: `Natural Vibes 2025 — ${toTitleCase(stem)}`,
+    id: filename,
+    src: `/foto%2020266/thumbs/${encodeURIComponent(filename)}`,
+    full: path,
+    alt: `Natural Vibes 2026 — foto ${index + 1}`,
   };
 }
 
-const GALLERY_2025 = GALLERY_FILES.map((filename) => makeEntry(filename));
+const GALLERY_2026 = GALLERY_2026_FILES.map((filename, index) => makeEntry(filename, index));
 
 function LazyImg({
   src,
@@ -119,25 +100,25 @@ export default function GallerySection() {
   }, []);
 
   const prev = useCallback(
-    () => setLightbox((p) => (p !== null ? (p - 1 + GALLERY_2025.length) % GALLERY_2025.length : null)),
+    () => setLightbox((p) => (p !== null ? (p - 1 + GALLERY_2026.length) % GALLERY_2026.length : null)),
     [],
   );
 
   const next = useCallback(
-    () => setLightbox((p) => (p !== null ? (p + 1) % GALLERY_2025.length : null)),
+    () => setLightbox((p) => (p !== null ? (p + 1) % GALLERY_2026.length : null)),
     [],
   );
 
   const loadMorePhotos = useCallback(() => {
     setVisibleCount((current) => (
-      current >= GALLERY_2025.length ? current : Math.min(current + BATCH_SIZE, GALLERY_2025.length)
+      current >= GALLERY_2026.length ? current : Math.min(current + BATCH_SIZE, GALLERY_2026.length)
     ));
   }, []);
 
   useEffect(() => {
     if (!galleryOpen) return;
 
-    setVisibleCount(Math.min(INITIAL_BATCH, GALLERY_2025.length));
+    setVisibleCount(Math.min(INITIAL_BATCH, GALLERY_2026.length));
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -148,7 +129,7 @@ export default function GallerySection() {
   }, [galleryOpen]);
 
   useEffect(() => {
-    if (!galleryOpen || visibleCount >= GALLERY_2025.length) return;
+    if (!galleryOpen || visibleCount >= GALLERY_2026.length) return;
 
     const root = galleryRef.current;
     const target = loadMoreRef.current;
@@ -192,22 +173,13 @@ export default function GallerySection() {
     }
   }, [loadMorePhotos]);
 
-  const previewPhotos = GALLERY_2025.slice(0, 4);
-  const visiblePhotos = GALLERY_2025.slice(0, visibleCount);
-  const canLoadMore = visibleCount < GALLERY_2025.length;
+  const previewPhotos = GALLERY_2026.slice(0, 4);
+  const visiblePhotos = GALLERY_2026.slice(0, visibleCount);
+  const canLoadMore = visibleCount < GALLERY_2026.length;
 
   return (
-    <section id="gallery" className="relative min-h-screen flex items-center">
+    <section id="gallery" className="relative flex items-center">
       <div className="container mx-auto px-4 py-24">
-        <div className="max-w-2xl mx-auto mb-16 px-6 py-8 paper-card text-center relative z-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-black text-foreground mb-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-            📸 Gallery
-          </h2>
-          <p className="text-foreground font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-            {lang === "it" ? "Rivivi i momenti delle edizioni passate" : "Relive the moments from past editions"}
-          </p>
-        </div>
-
         <div className="max-w-2xl mx-auto relative z-10">
           <motion.button
             type="button"
@@ -215,7 +187,7 @@ export default function GallerySection() {
             transition={{ duration: 0.2 }}
             className="paper-card relative w-full overflow-hidden cursor-pointer group text-left"
             onClick={() => setGalleryOpen(true)}
-            aria-label={lang === "it" ? "Apri la gallery 2025" : "Open the 2025 gallery"}
+            aria-label={lang === "it" ? "Apri la gallery 2026" : "Open the 2026 gallery"}
           >
             <div className="grid grid-cols-2 gap-0.5">
               {previewPhotos.map((item) => (
@@ -223,7 +195,7 @@ export default function GallerySection() {
                   <img
                     src={item.src}
                     alt={item.alt}
-                    loading="eager"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -232,14 +204,14 @@ export default function GallerySection() {
 
             <div className="absolute inset-0 bg-background/50 flex flex-col items-center justify-center gap-3 group-hover:bg-background/40 transition-colors">
               <span className="text-3xl sm:text-4xl font-heading font-black text-foreground drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] tracking-tight">
-                {lang === "it" ? "Edizione 2025" : "2025 Edition"}
+                {lang === "it" ? "Edizione 2026" : "2026 Edition"}
               </span>
               <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-foreground/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-                📷 Ph. Andrea Terlizzi
+                📷 Ph. Nataly Buratti · Kid Kuli
               </span>
               <div className="flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-primary-foreground font-heading font-black text-sm tracking-widest shadow-lg">
                 <Images className="w-4 h-4" />
-                {lang === "it" ? `Vedi tutte le ${GALLERY_2025.length} foto` : `View all ${GALLERY_2025.length} photos`}
+                {lang === "it" ? `Vedi tutte le ${GALLERY_2026.length} foto` : `View all ${GALLERY_2026.length} photos`}
               </div>
             </div>
           </motion.button>
@@ -254,15 +226,15 @@ export default function GallerySection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-background/97 backdrop-blur-md"
+            className="festival-gallery-dialog fixed inset-0 z-[100] bg-background/97 backdrop-blur-md"
             role="dialog"
             aria-modal="true"
-            aria-label={lang === "it" ? "Gallery 2025" : "2025 gallery"}
+            aria-label={lang === "it" ? "Gallery 2026" : "2026 gallery"}
           >
             <div className="flex h-full flex-col">
-              <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-xl border-b border-border/40">
+              <div className="festival-gallery-toolbar sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-xl border-b border-border/40">
                 <span className="font-heading font-black text-lg text-foreground">
-                  {lang === "it" ? "📸 Edizione 2025" : "📸 2025 Edition"}
+                  {lang === "it" ? "📸 Edizione 2026" : "📸 2026 Edition"}
                 </span>
                 <button
                   type="button"
@@ -277,20 +249,10 @@ export default function GallerySection() {
               <div className="flex-1 min-h-0 px-4 pb-6 pt-4 md:px-6">
                 <div className="mx-auto flex h-full max-w-7xl flex-col gap-4">
                   <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-                    <div>
-                      <p className="text-base font-heading font-black text-foreground">
-                        {lang === "it" ? "Scorri verso il basso per esplorare la gallery" : "Scroll down to explore the gallery"}
-                      </p>
-                      <p className="text-sm text-foreground/70">
-                        {lang === "it"
-                          ? "Le foto vengono aggiunte poco alla volta mentre continui a scorrere."
-                          : "More photos are added progressively as you keep scrolling."}
-                      </p>
-                    </div>
                     <p className="text-sm font-bold text-foreground/75">
                       {lang === "it"
-                        ? `${visibleCount} / ${GALLERY_2025.length} foto caricate`
-                        : `${visibleCount} / ${GALLERY_2025.length} photos loaded`}
+                        ? `${visibleCount} / ${GALLERY_2026.length} foto`
+                        : `${visibleCount} / ${GALLERY_2026.length} photos`}
                     </p>
                   </div>
 
@@ -300,8 +262,8 @@ export default function GallerySection() {
                     <div
                       ref={galleryRef}
                       role="region"
-                      aria-label={lang === "it" ? "Gallery verticale 2025" : "2025 vertical gallery"}
-                      className="h-full min-h-[52vh] overflow-y-auto overflow-x-hidden pb-4 pr-1 [scrollbar-width:thin]"
+                      aria-label={lang === "it" ? "Gallery verticale 2026" : "2026 vertical gallery"}
+                      className="festival-gallery-scroll h-full min-h-[52vh] overflow-y-auto overflow-x-hidden pb-4 pr-1 [scrollbar-width:thin]"
                       onScroll={handleGalleryScroll}
                     >
                       <div className="grid grid-cols-2 gap-3 pr-3 sm:grid-cols-3 xl:grid-cols-4">
@@ -327,14 +289,7 @@ export default function GallerySection() {
                             ref={loadMoreRef}
                             className="col-span-full flex min-h-40 items-center justify-center rounded-[24px] border border-dashed border-border/50 bg-card/30 px-6 py-10 text-center"
                           >
-                            <div className="space-y-3">
-                              <p className="text-base font-heading font-black text-foreground">
-                                {lang === "it" ? "Sto preparando altre foto" : "Loading more photos"}
-                              </p>
-                              <p className="text-sm text-foreground/70">
-                                {lang === "it" ? "Continua a scorrere verso il basso" : "Keep scrolling down"}
-                              </p>
-                            </div>
+                            <div aria-hidden="true" className="h-6 w-6 animate-spin rounded-full border-2 border-primary/30 border-t-primary" />
                           </div>
                         )}
                       </div>
@@ -353,7 +308,7 @@ export default function GallerySection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[110] bg-background/97 backdrop-blur-md flex items-center justify-center"
+            className="festival-image-dialog fixed inset-0 z-[110] bg-background/97 backdrop-blur-md flex items-center justify-center"
             onClick={closeLightbox}
             role="dialog"
             aria-modal="true"
@@ -362,7 +317,7 @@ export default function GallerySection() {
             <button
               type="button"
               onClick={closeLightbox}
-              className="absolute top-4 right-4 text-foreground/70 hover:text-foreground z-10 p-2"
+              className="festival-image-close absolute top-4 right-4 text-foreground/70 hover:text-foreground z-10 p-2"
               aria-label={lang === "it" ? "Chiudi immagine" : "Close image"}
             >
               <X className="w-7 h-7" />
@@ -373,7 +328,7 @@ export default function GallerySection() {
                 e.stopPropagation();
                 prev();
               }}
-              className="absolute left-2 md:left-8 text-foreground/50 hover:text-foreground z-10 p-3"
+              className="festival-image-prev absolute left-2 md:left-8 text-foreground/50 hover:text-foreground z-10 p-3"
               aria-label={lang === "it" ? "Foto precedente" : "Previous photo"}
             >
               <ChevronLeft className="w-8 h-8 md:w-10 md:h-10" />
@@ -384,7 +339,7 @@ export default function GallerySection() {
                 e.stopPropagation();
                 next();
               }}
-              className="absolute right-2 md:right-8 text-foreground/50 hover:text-foreground z-10 p-3"
+              className="festival-image-next absolute right-2 md:right-8 text-foreground/50 hover:text-foreground z-10 p-3"
               aria-label={lang === "it" ? "Foto successiva" : "Next photo"}
             >
               <ChevronRight className="w-8 h-8 md:w-10 md:h-10" />
@@ -396,9 +351,9 @@ export default function GallerySection() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.2 }}
-              src={GALLERY_2025[lightbox].src}
-              alt={GALLERY_2025[lightbox].alt}
-              className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+              src={GALLERY_2026[lightbox].full}
+              alt={GALLERY_2026[lightbox].alt}
+              className="festival-full-photo max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
           </motion.div>

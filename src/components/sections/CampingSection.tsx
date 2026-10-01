@@ -6,10 +6,10 @@ const shadow = "drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]";
 const T = {
   it: {
     title: "🏕️ Camping",
-    sub: "Dormi sotto le stelle 🌟 — il campeggio è gratuito per tutti i 3 giorni, ma solo per i possessori del pass.",
+    sub: "Sotto le stelle, immersi nella natura 🌟",
     accessTitle: "🎫 Accesso camping",
     accessBody:
-      "Il campeggio sarà attivo da venerdì 19 giugno alle ore 12:00 a lunedì 22 giugno alle ore 12:00.",
+      "TBA",
     features: [
       {
         icon: Tent,
@@ -30,10 +30,10 @@ const T = {
   },
   en: {
     title: "🏕️ Camping",
-    sub: "Sleep under the stars 🌟 — camping is free for all 3 days, but only for pass holders.",
+    sub: "Under the stars, surrounded by nature 🌟",
     accessTitle: "🎫 Camping access",
     accessBody:
-      "Camping will be available from Friday June 19 at 12:00 to Monday June 22 at 12:00.",
+      "TBA",
     features: [
       {
         icon: Tent,
@@ -64,24 +64,6 @@ export default function CampingSection() {
         <div className="max-w-2xl mx-auto mb-16 px-6 py-8 paper-card text-center relative">
           <h2 className={`text-2xl sm:text-3xl md:text-4xl font-heading font-black text-foreground mb-2 ${shadow}`}>{t.title}</h2>
           <p className={`text-foreground font-bold max-w-xl mx-auto leading-relaxed ${shadow}`}>{t.sub}</p>
-        </div>
-
-        {/* Camping photo */}
-        <div className="max-w-4xl mx-auto mb-10 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div className="rounded-2xl overflow-hidden">
-            <img
-              src="/images/nv/camping-meadow.jpg"
-              alt="Area camping Natural Vibes"
-              className="w-full h-52 object-cover object-center"
-            />
-          </div>
-          <div className="rounded-2xl overflow-hidden">
-            <img
-              src="/images/nv/camping-forest.jpg"
-              alt="Tende nel bosco"
-              className="w-full h-52 object-cover object-center"
-            />
-          </div>
         </div>
 
         <div className="max-w-4xl mx-auto mb-10 paper-card px-6 py-5 text-center">

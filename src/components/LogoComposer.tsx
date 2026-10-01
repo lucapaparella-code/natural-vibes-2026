@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
 import type { SectionMode } from "@/lib/particles";
 
 interface Props {
@@ -33,8 +33,7 @@ const LINES: string[][] = [
   ["N", "A", "T", "U", "R", "A2", "L"],
   ["V", "I", "B", "E", "S"],
 ];
-const YEAR_LINE = "2026";
-const SUBTITLE_LINES = ["19-20-21 GIUGNO", "SPAZIO IL PASSEL", "ANGROGNA (TO)"];
+const YEAR_LINE = "2027";
 
 // Branches disabled
 const MAX_BRANCHES = 0;
@@ -213,6 +212,7 @@ function generateBranch(index: number, w: number, h: number): Branch {
 }
 
 export default function LogoComposer({ mode, className = "" }: Props) {
+  const reduced = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: -9999, y: -9999, inside: false });
   const marblesRef = useRef<Array<() => void>>([]);
@@ -226,7 +226,7 @@ export default function LogoComposer({ mode, className = "" }: Props) {
 
   // Grow branches while mouse is inside
   const growLoop = useCallback(() => {
-    if (!mouseRef.current.inside) return;
+    if (!mouseRef.current.inside || MAX_BRANCHES === 0) return;
     const now = performance.now();
     const dt = lastTickRef.current ? now - lastTickRef.current : 0;
     lastTickRef.current = now;
@@ -248,6 +248,7 @@ export default function LogoComposer({ mode, className = "" }: Props) {
   }, []);
 
   const updateMousePosition = useCallback((clientX: number, clientY: number) => {
+    if (reduced) return;
     const rect = containerRef.current?.getBoundingClientRect();
     if (!rect) return;
     mouseRef.current.x = clientX - rect.left;
@@ -259,7 +260,7 @@ export default function LogoComposer({ mode, className = "" }: Props) {
       hoverRafRef.current = requestAnimationFrame(growLoop);
     }
     marblesRef.current.forEach((fn) => fn());
-  }, [growLoop]);
+  }, [growLoop, reduced]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     updateMousePosition(e.clientX, e.clientY);
@@ -463,11 +464,6 @@ export default function LogoComposer({ mode, className = "" }: Props) {
               registerUpdate={marblesRef}
               isYear={true}
             />
-          ))}
-        </div>
-        <div className="mt-4 text-sm md:text-base tracking-[0.3em] uppercase text-foreground font-bold px-4 py-2 rounded-lg glass-raw relative z-10 text-center">
-          {SUBTITLE_LINES.map((line, i) => (
-            <div key={i}>{line}</div>
           ))}
         </div>
       </div>

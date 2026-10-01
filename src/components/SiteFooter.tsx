@@ -18,15 +18,15 @@ export default function SiteFooter() {
         >
           <p
             className={`font-heading font-black text-primary leading-none tracking-tight ${shadow}`}
-            style={{ fontSize: "clamp(3rem, 12vw, 8rem)" }}
+            style={{ fontSize: "clamp(2.4rem, 8vw, 6rem)" }}
           >
-            {lang === "it" ? "19—21 GIU" : "19—21 JUN"}
+            NATURAL VIBES
           </p>
 
           <p
             className={`font-heading font-bold text-foreground uppercase tracking-[0.3em] mt-4 text-sm ${shadow}`}
           >
-            Passel · Angrogna, TO · 2026
+            Passel · Angrogna, TO · 2027
           </p>
         </motion.div>
       </div>

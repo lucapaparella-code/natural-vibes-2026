@@ -1,0 +1,38 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Local tools, caches and system files
+.claude/
+.codex/
+.agents/
+.DS_Store
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+!.env.example
+
+# Local design notes, previews and backups
+/docs/
+/preview sito*.png
+/NV 2026 Livelli.png
+/WhatsApp Image *.jpeg
+/banner-facebook.jpg
+/carousel-*.jpg
+**/_originals_backup/
+**/*_backup.*
+
+# Source photo archives and unused design variants
+/public/images/2/
+/public/images/gallery-2026/
+/public/images/banner-facebook.jpg
+/public/images/carousel-*.jpg
+/public/foto */sources.json
+/public/videos/festival-background.mp4
+/public/videos/festival-poster.webp
+/public/videos/festival-sun.mp4
+/public/videos/festival-sun-poster.webp
+/src/components/PhotoInterlude.tsx
+/src/data/photos2026.ts

@@ -1,14 +1,9 @@
 import { useState, useCallback } from "react";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/sections/HeroSection";
-import InfoSection from "@/components/sections/InfoSection";
-import LineupSection from "@/components/sections/LineupSection";
-import TicketsSection from "@/components/sections/TicketsSection";
-import CampingSection from "@/components/sections/CampingSection";
-import FAQSection from "@/components/sections/FAQSection";
+import FestivalExperience from "@/components/FestivalExperience";
+import GalleryArchiveSection from "@/components/sections/GalleryArchiveSection";
 import GallerySection from "@/components/sections/GallerySection";
-import VolontariCallout from "@/components/VolontariCallout";
-import LogoMascot from "@/components/LogoMascot";
+import Gallery2024Section from "@/components/sections/Gallery2024Section";
 import SiteFooter from "@/components/SiteFooter";
 import EasterEggManager from "@/components/easter-eggs/EasterEggManager";
 import { LangProvider, LangToggle } from "@/components/LangToggle";
@@ -19,31 +14,17 @@ export default function Index() {
   const activeSection = useActiveSection();
   const [hoverSection, setHoverSection] = useState<SectionMode | null>(null);
   const mode: SectionMode = hoverSection ?? activeSection;
-
-  const handleHoverSection = useCallback(
-    (section: SectionMode | null) => setHoverSection(section),
-    []
-  );
-
+  const handleHoverSection = useCallback((section: SectionMode | null) => setHoverSection(section), []);
   return (
     <LangProvider>
-      <main className="relative min-h-screen">
-        {/* Fixed teal background */}
-        <div className="fixed inset-0 w-full h-full" style={{ zIndex: -20 }}>
-          <img src="/images/bg-nv2026.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
-        </div>
-
+      <main className="trial-page relative min-h-screen">
         <Navbar activeSection={activeSection} onHoverSection={handleHoverSection} />
         <LangToggle />
-        <HeroSection mode={mode} />
-        <LogoMascot />
-        <InfoSection />
-        <LineupSection />
-        <TicketsSection />
-        <CampingSection />
-        <FAQSection />
-        <GallerySection />
-        <VolontariCallout />
+        <FestivalExperience mode={mode}>
+          <GallerySection />
+          <GalleryArchiveSection />
+          <Gallery2024Section />
+        </FestivalExperience>
         <SiteFooter />
         <EasterEggManager />
       </main>

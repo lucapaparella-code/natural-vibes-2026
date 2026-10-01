@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const EYE_CENTER_X_PCT = 0.39;
 const EYE_CENTER_Y_PCT = 0.475;
 const EYE_SIZE_PCT = 0.085;
-const MAX_OFFSET = 50;
+const MAX_EYE_TRAVEL_RATIO = 0.17;
 const TRACKING_RANGE = 350;
 const LOGO_SRC = "/images/logo-no-eye-hd.png";
 const EYE_SRC = "/images/occhio.png";
@@ -23,7 +23,7 @@ function preloadImage(src: string) {
     };
 
     img.onload = finish;
-    img.onerror = resolve;
+    img.onerror = () => resolve();
     img.src = src;
 
     if (img.complete) {
@@ -55,6 +55,7 @@ export default function LogoMascot() {
     if (!img) return;
 
     const rect = img.getBoundingClientRect();
+    if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
     const eyeCenterX = rect.left + rect.width * EYE_CENTER_X_PCT;
     const eyeCenterY = rect.top + rect.height * EYE_CENTER_Y_PCT;
 
@@ -65,9 +66,10 @@ export default function LogoMascot() {
     const ratio = clamped / TRACKING_RANGE;
     const angle = Math.atan2(dy, dx);
 
+    const maxOffset = rect.width * EYE_SIZE_PCT * MAX_EYE_TRAVEL_RATIO;
     setOffset({
-      x: Math.cos(angle) * ratio * MAX_OFFSET,
-      y: Math.sin(angle) * ratio * MAX_OFFSET,
+      x: Math.cos(angle) * ratio * maxOffset,
+      y: Math.sin(angle) * ratio * maxOffset,
     });
 
     // ── Spin detection ──────────────────────────────────
@@ -143,7 +145,6 @@ export default function LogoMascot() {
               className="absolute inset-0 z-10 h-full w-full object-contain select-none pointer-events-none"
               draggable={false}
               decoding="sync"
-              fetchPriority="high"
             />
 
             {/* Rettangolo bianco dietro l'occhio */}
@@ -160,15 +161,21 @@ export default function LogoMascot() {
               }}
             />
 
-            {/* Occhio dietro il logo */}
+            {/* The eye stays inside its socket at every logo size. */}
+            <div className="absolute z-[7] overflow-hidden" style={{
+              left: `${(EYE_CENTER_X_PCT - EYE_SIZE_PCT * 0.65) * 100}%`,
+              top: `${(EYE_CENTER_Y_PCT - EYE_SIZE_PCT * 0.65) * 100}%`,
+              width: `${EYE_SIZE_PCT * 1.3 * 100}%`,
+              height: `${EYE_SIZE_PCT * 1.3 * 100}%`,
+            }}>
             <div
               id="tracking-eye"
               className="absolute z-[7]"
               style={{
-                left: `${(EYE_CENTER_X_PCT - EYE_SIZE_PCT / 2) * 100}%`,
-                top: `${(EYE_CENTER_Y_PCT - EYE_SIZE_PCT / 2) * 100}%`,
-                width: `${EYE_SIZE_PCT * 100}%`,
-                height: `${EYE_SIZE_PCT * 100}%`,
+                left: "11.5%",
+                top: "11.5%",
+                width: "77%",
+                height: "77%",
                 transform: `translate(${offset.x}px, ${offset.y}px)`,
                 transition: "transform 80ms ease-out",
               }}
@@ -180,8 +187,8 @@ export default function LogoMascot() {
                 className="h-full w-full object-contain"
                 draggable={false}
                 decoding="sync"
-                fetchPriority="high"
-              />
+                />
+            </div>
             </div>
           </div>
         )}
