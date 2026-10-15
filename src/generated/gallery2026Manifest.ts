@@ -156,7 +156,6 @@ export const GALLERY_2026_FILES = [
   "8D7A9331.webp",
   "8D7A9336.webp",
   "8D7A9712.webp",
-  "8D7A9799-2.webp",
   "8D7A9799.webp",
   "8D7A9826.webp",
   "8D7A9856.webp",
