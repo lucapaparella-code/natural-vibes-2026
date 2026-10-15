@@ -28,9 +28,9 @@ export const DAY_MOSAIC_PHOTOS: MosaicPhoto[] = [
     "id": "sun-selection-3",
     "src": "/images/mosaic-2026/sun-selection-3-1200.webp",
     "small": "/images/mosaic-2026/sun-selection-3-640.webp",
-    "full": "/sotto%20il%20sole%20/_MG_0406.webp",
-    "width": 1350,
-    "height": 1800,
+    "full": "/foto%2020266/_MG_0616.webp",
+    "width": 1800,
+    "height": 1200,
     "caption": {
       "it": "Ballare sotto il sole",
       "en": "Natural Vibes 2026 · Daytime 3"

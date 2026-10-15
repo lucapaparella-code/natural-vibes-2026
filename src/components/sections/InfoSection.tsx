@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { MapPin, Music, Heart, Sparkles } from "lucide-react";
+import { Music, Heart, Sparkles } from "lucide-react";
 import { useLang } from "@/components/LangToggle";
 
 const shadow = "drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]";
@@ -12,8 +12,6 @@ const CONTENT = {
       "Natural Vibes è un festival indipendente, un'esperienza immersiva tra musica, arti visive, performance, installazioni interattive e workshop.",
     slogan: "This is Natural Vibes",
     expectTitle: "Lo spirito del festival",
-    location:
-      "Il Passel – Angrogna (TO): uno spazio immerso nella natura.",
     facilities:
       "Il festival unisce 3 dancefloor, area chill, area food, spazio banchetti, area tech, area camping e le bellissime montagne a fare da sfondo.",
     accessibility:
@@ -21,7 +19,6 @@ const CONTENT = {
     activities:
       "Uno spazio per rilassarsi nell'area chillout, esplorare installazioni artistiche, partecipare a workshop interattivi e ritrovarsi lontano dalla routine quotidiana.",
     mood: "Musica, arte e un mood aperto, umano e coinvolgente: lo spirito che da sempre caratterizza Natural Vibes.",
-    place: "Angrogna, TO",
   },
   en: {
     title: "The Festival",
@@ -29,8 +26,6 @@ const CONTENT = {
       "Natural Vibes is an independent festival, an immersive experience combining music, visual arts, performances, interactive installations and workshops.",
     slogan: "This is Natural Vibes",
     expectTitle: "The spirit of the festival",
-    location:
-      "Passel – Angrogna (TO): a space surrounded by nature.",
     facilities:
       "The festival brings together 3 dancefloors, a chill area, food area, market area, tech area, camping area, and the beautiful mountains as a backdrop.",
     accessibility:
@@ -38,7 +33,6 @@ const CONTENT = {
     activities:
       "A space to relax in the chillout area, explore artistic installations, take part in interactive workshops and reconnect with yourself away from the routines of everyday life.",
     mood: "Music, art and an open, human and welcoming atmosphere: the spirit that has always defined Natural Vibes.",
-    place: "Angrogna, TO",
   },
 };
 
@@ -117,7 +111,6 @@ export default function InfoSection() {
 
             <div className="space-y-6">
               {[
-                { Icon: MapPin, text: t.location },
                 { Icon: Music, text: t.facilities },
                 { Icon: Heart, text: t.accessibility },
               ].map(({ Icon, text }, i) => (

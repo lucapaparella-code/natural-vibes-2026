@@ -26,7 +26,7 @@ export default function SiteFooter() {
           <p
             className={`font-heading font-bold text-foreground uppercase tracking-[0.3em] mt-4 text-sm ${shadow}`}
           >
-            Passel · Angrogna, TO · 2027
+            2027
           </p>
         </motion.div>
       </div>

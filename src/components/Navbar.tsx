@@ -52,17 +52,7 @@ export default function Navbar({ activeSection, onHoverSection }: Props) {
 
   return (
     <nav className="site-navbar fixed top-0 left-0 right-0 z-50 glass">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <button
-          onClick={() => scrollTo("hero")}
-          className="flex items-center gap-2 min-h-11 min-w-11"
-          aria-label="Natural Vibes - torna in cima"
-        >
-          <span className="font-heading font-black text-lg text-primary leading-none">
-            NV '27
-          </span>
-        </button>
-
+      <div className="container mx-auto flex items-center justify-end h-16 px-4">
         {/* Desktop */}
         <ul className="hidden md:flex gap-1">
           {NAV_ITEMS.map((item) => (

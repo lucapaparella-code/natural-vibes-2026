@@ -12,15 +12,15 @@
 .gallery-video-phase { position: relative; }
 .trial-video-control { position: fixed; right: max(20px,env(safe-area-inset-right)); bottom: max(20px,env(safe-area-inset-bottom)); z-index: 40; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 10px; background: #10201dcc; border: 1px solid #d8bb6240; cursor: pointer; }
 .trial-hero { position: relative; z-index: 2; isolation: isolate; min-height: 100svh; padding: 88px 40px 36px; overflow: hidden; }
-.trial-hero-board { position: relative; width: min(1480px,100%); margin: 0 auto; display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); grid-template-rows: 620px 420px; gap: 36px; }
+.trial-hero-board { position: relative; width: min(1480px,100%); margin: 0 auto; display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); grid-template-rows: 620px minmax(420px,auto); gap: 36px; }
 .hero-brand { grid-column: 1/13; grid-row: 1; position: relative; height: 620px; min-width: 0; }
 .hero-brand > div > div { transform: scale(1.25); }
 .hero-festival { grid-column: 1/5; grid-row: 2; }
 .hero-story { grid-column: 9/13; grid-row: 2; }
-.hero-festival, .hero-story { display: flex; flex-direction: column; justify-content: center; }
+.hero-festival, .hero-story { height: auto; display: flex; flex-direction: column; justify-content: center; }
 .hero-mascot { grid-column: 5/9; grid-row: 2; position: relative; min-width: 0; min-height: 0; overflow: hidden; }
 .hero-mascot #logo-eye-stage { position: absolute; }
-.hero-mascot #logo-eye-composer { height: 178%; }
+.hero-mascot #logo-eye-composer { height: min(178%,800px); }
 .trial-hero-foot { position: relative; width: min(1480px,100%); margin: 20px auto 0; display: flex; align-items: center; justify-content: space-between; padding-right: 60px; gap: 24px; font-size: 10px; font-weight: 700; letter-spacing: .14em; }
 .trial-hero-foot a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: hsl(var(--primary)); }
 .collage-surface { position: relative; min-width: 0; min-height: 0; height: 100%; transform-style: preserve-3d; }
@@ -71,7 +71,7 @@
 .night-board .mosaic-extra-4, .night-board .mosaic-extra-5, .night-board .mosaic-extra-6 { grid-row: 4; }
 @media (min-width: 701px) and (max-width: 1100px) {
   .trial-hero { padding-inline: 24px; }
-  .trial-hero-board { grid-template-rows: 550px 500px; gap: 16px; }
+  .trial-hero-board { grid-template-rows: 550px minmax(500px,auto); gap: 16px; }
   .hero-brand { height: 550px; }
   .hero-brand > div > div { transform: scale(1.05); }
   .hero-festival.paper-card, .hero-story.paper-card { padding: 22px; }
