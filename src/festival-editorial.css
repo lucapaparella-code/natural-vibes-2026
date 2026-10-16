@@ -1,0 +1,145 @@
+/* Photographic festival composition over the original video experience. */
+.test-hybrid-hero .trial-hero-board { grid-template-rows: 620px auto auto; row-gap: 64px; }
+.test-festival-photo { grid-column: 1 / -1; grid-row: 2; position: relative; isolation: isolate; min-width: 0; min-height: 900px; border-radius: 16px; overflow: hidden; color: #efeee4; border: 1px solid #c7a95442; }
+.test-photo-window { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: #10201d; }
+.test-photo-window img { position: absolute; inset: -45px 0; width: 100%; height: calc(100% + 90px); object-fit: cover; object-position: 46% 55%; max-width: none; }
+.test-photo-shade { position: absolute; inset: 0; background: linear-gradient(180deg,#09131108 15%,#09131100 35%,#09131166 62%,#091311e8 100%),linear-gradient(90deg,transparent 35%,#09131110 55%,#09131187 100%); }
+.test-photo-lines { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: soft-light; opacity: .75; }
+.test-photo-kicker { position: absolute; top: 40px; left: 5%; color: #f0e8cd; }
+.test-hybrid-hero .test-photo-title { position: absolute; top: 116px; left: 4.5%; margin: 0; font-family: Auge,sans-serif; font-weight: 900; font-size: clamp(80px,10vw,160px); line-height: 1; letter-spacing: -.04em; }
+.test-photo-mascot { position: absolute; top: 32px; right: 3%; width: 35%; height: 400px; pointer-events: none; }
+.test-photo-mascot #logo-eye-stage { position: absolute; }
+.test-photo-mascot #logo-eye-composer { height: 820px; flex-shrink: 0; }
+.test-photo-description { position: relative; width: 46%; margin: 455px 5% 0 auto; padding-bottom: 50px; }
+.test-photo-description p { font-size: 18px; line-height: 1.7; margin: 0; color: #efeee4; text-shadow: 0 2px 16px #09131199; }
+.test-photo-description p:first-child { font-size: 23px; line-height: 1.5; font-weight: 500; }
+.test-photo-description p + p { margin-top: 24px; }
+.test-photo-description .collage-text-link { margin-top: 28px; min-height: 44px; }
+/* Restore the approved photo-and-copy vision composition. */
+.test-hybrid-hero .test-vision { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: .9fr 1fr; align-items: center; gap: clamp(50px,8vw,140px); padding: 95px 48px; margin: 30px 0 45px; position: relative; isolation: isolate; }
+.test-vision::before, .test-vision::after { content: none; }
+.test-vision-copy { text-shadow: 0 2px 18px #091311bb; }
+.test-vision-photo { position: relative; aspect-ratio: 4 / 5; }
+.test-vision-photo::before { content: ''; position: absolute; inset: -24px 28px 28px -24px; border: 1px solid #dbc08b65; border-radius: 3px; transform: rotate(-4deg); }
+.test-vision-photo img { position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
+.test-vision-copy .collage-kicker { color: #dbc08b; }
+.test-hybrid-hero .test-vision h2 { font: 900 clamp(42px,4.5vw,72px)/1.05 Auge,sans-serif; letter-spacing: -.03em; margin: 28px 0 40px; }
+.test-hybrid-hero .test-vision p { font-size: 17px; line-height: 1.8; color: #e6e6d7db; margin: 0; }
+.test-hybrid-hero .test-vision p + p { margin-top: 30px; }
+.test-vision-copy .collage-text-link { margin-top: 28px; min-height: 44px; }
+@media (max-width: 1100px) {
+ .test-hybrid-hero .trial-hero-board { grid-template-rows: 550px auto auto; }
+ .test-festival-photo { min-height: 900px; }
+ .test-photo-mascot { right: 1%; width: 39%; height: 350px; }
+ .test-photo-mascot #logo-eye-composer { height: 700px; }
+ .test-photo-description { width: 52%; margin-top: 390px; }
+ .test-photo-description p:first-child { font-size: 21px; }
+ .test-photo-description p { font-size: 17px; }
+ .test-hybrid-hero .test-vision { gap: 48px; padding-inline: 24px; }
+}
+@media (max-width: 900px) {
+ .test-hybrid-hero .trial-hero-board { grid-template-rows: 500px auto auto; }
+ .test-hybrid-hero .test-vision { grid-column: 1 / -1; grid-row: 3; width: 100%; gap: 32px; padding-inline: 12px; }
+ .test-photo-description { width: 58%; }
+ .test-hybrid-hero .test-photo-title { font-size: 80px; top: 100px; }
+ .test-photo-mascot { width: 42%; top: 80px; }
+}
+@media (max-width: 700px) {
+ .test-hybrid-hero .trial-hero-board { grid-template-rows: clamp(300px,84vw,420px) auto auto; row-gap: 42px; }
+ .test-festival-photo { min-height: 0; border-radius: 12px; }
+ .test-photo-kicker { top: 25px; left: 24px; font-size: 10px; letter-spacing: .16em; }
+ .test-hybrid-hero .test-photo-title { top: 70px; left: 22px; font-size: clamp(48px,12.5vw,80px); white-space: nowrap; }
+ .test-photo-window img { inset: 0; height: 650px; object-position: 50% 40%; }
+ .test-photo-shade { background: linear-gradient(180deg,#09131110 0%,#09131100 22%,#09131144 40%,#10201df5 62%,#10201d 100%); }
+ .test-photo-mascot { top: 140px; right: 8px; width: 200px; height: 245px; }
+ .test-photo-mascot #logo-eye-composer { height: 490px; }
+ .test-photo-description { width: auto; margin: 420px 24px 0; padding-bottom: 32px; }
+ .test-photo-description p:first-child { font-size: 20px; }
+ .test-photo-description p { font-size: 16px; line-height: 1.7; }
+ .test-photo-lines { width: 150%; }
+ .test-hybrid-hero .test-vision { grid-template-columns: 1fr; gap: 54px; padding: 65px 16px; margin: 12px 0; }
+ .test-vision-photo { aspect-ratio: 5 / 4; }
+ .test-vision-photo::before { inset: -14px 17px 17px -14px; }
+ .test-vision::before,.test-vision::after { inset-inline: -20px; }
+ .test-hybrid-hero .test-vision h2 { font-size: 38px; }
+ .test-hybrid-hero .test-vision p { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .test-photo-window img { transform: none !important; }
+ .test-photo-mascot #tracking-eye { transform: none !important; }
+}
+/* Keep the moving background, with a soft contrast layer confined to the copy. */
+.test-vision-copy { position: relative; isolation: isolate; text-shadow: 0 2px 8px #000b; }
+.test-vision-copy::before { content: ''; position: absolute; z-index: -1; inset: -48px -36px; pointer-events: none; background: radial-gradient(ellipse at center,#06110de8 0%,#06110dcf 48%,#06110d80 72%,transparent 100%); filter: blur(18px); }
+.test-hybrid-hero .test-vision p { color: #fffdf3; font-size: 18px; font-weight: 500; line-height: 1.8; }
+.test-vision-copy .collage-kicker { color: #f3d488; font-weight: 700; }
+.test-vision-copy .collage-text-link { color: #ffce52; font-size: 17px; font-weight: 700; }
+@media (max-width: 700px) {
+ .test-hybrid-hero .test-vision p { font-size: 17px; line-height: 1.75; }
+ .test-vision-copy::before { inset: -30px -16px; filter: blur(12px); }
+}
+/* Day and night: the same open photographic composition as the vision. */
+.editorial-chapters.festival-mosaic { width: min(1432px,calc(100% - 80px)); padding: 100px 48px 160px; }
+.editorial-chapter { position: relative; scroll-margin-top: 110px; }
+.editorial-chapter + .editorial-chapter { margin-top: 210px; }
+.chapter-title { position: relative; z-index: 2; font: 900 clamp(70px,9vw,138px)/1 Auge,sans-serif; letter-spacing: -.04em; margin: 0 0 -28px 32px; color: #f3f0e4; text-shadow: 0 3px 18px #0008; pointer-events: none; }
+.chapter-intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(50px,7vw,110px); align-items: center; }
+.chapter-lead { height: 590px; position: relative; }
+.chapter-lead::before,.chapter-photo::before { content: ''; position: absolute; inset: -18px 22px 22px -18px; border: 1px solid #dbc08b65; border-radius: 3px; transform: rotate(-3deg); pointer-events: none; }
+.editorial-chapters .collage-photo { border-radius: 3px; border: 0; box-shadow: 0 16px 45px #0003; }
+.chapter-copy { padding-block: 55px; }
+.chapter-copy h3 { font: 900 clamp(38px,4vw,60px)/1.08 Auge,sans-serif; letter-spacing: -.03em; margin: 26px 0 30px; color: #fffdf3; }
+.chapter-copy p { font-size: 20px; font-weight: 500; line-height: 1.8; color: #fffdf3; max-width: 520px; }
+.chapter-photos { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); column-gap: 70px; row-gap: 110px; align-items: center; padding-top: 110px; }
+.chapter-photo { grid-column: span 6; height: auto; aspect-ratio: 3 / 2; }
+.chapter-photo:nth-child(4n + 1) { grid-column: 2 / 7; }
+.chapter-photo:nth-child(4n + 2) { grid-column: 8 / 13; margin-top: 90px; }
+.chapter-photo:nth-child(4n + 3) { grid-column: 1 / 7; }
+.chapter-photo:nth-child(4n + 4) { grid-column: 8 / 12; margin-top: 60px; }
+.chapter-photo.chapter-portrait { aspect-ratio: 4 / 5; }
+.chapter-photo:nth-child(even)::before { transform: rotate(3deg); inset: 20px -16px -16px 20px; }
+.chapter-night .chapter-title { text-align: right; margin-left: 0; margin-right: 24px; }
+.chapter-night .chapter-intro { grid-template-columns: 1fr 1.1fr; }
+.chapter-night .chapter-lead { grid-column: 2; grid-row: 1; }
+.chapter-night .chapter-copy { grid-column: 1; grid-row: 1; }
+.chapter-photos > :last-child:nth-child(odd) { grid-column: 3 / 11; aspect-ratio: 16 / 9; margin-top: 0; }
+@media (max-width:1100px) {
+ .editorial-chapters.festival-mosaic { padding-inline: 16px; width: calc(100% - 48px); }
+ .chapter-intro { gap: 48px; }
+ .chapter-lead { height: 480px; }
+ .chapter-photos { column-gap: 40px; row-gap: 90px; }
+ .chapter-copy p { font-size: 18px; }
+}
+@media (max-width:700px) {
+ .editorial-chapters.festival-mosaic { width: calc(100% - 40px); padding: 65px 0 90px; }
+ .editorial-chapter + .editorial-chapter { margin-top: 130px; }
+ .chapter-title { font-size: clamp(49px,12vw,80px); margin: 0 0 -12px 12px; }
+ .chapter-night .chapter-title { text-align: left; margin: 0 0 -12px 12px; }
+ .chapter-intro,.chapter-night .chapter-intro { grid-template-columns: 1fr; gap: 12px; }
+ .chapter-lead,.chapter-night .chapter-lead { grid-column: 1; grid-row: 1; height: auto; aspect-ratio: 4 / 3; }
+ .chapter-copy,.chapter-night .chapter-copy { grid-column: 1; grid-row: 2; padding: 35px 16px 15px; }
+ .chapter-copy h3 { font-size: 37px; margin: 20px 0 24px; }
+ .chapter-copy p { font-size: 17px; line-height: 1.75; }
+ .chapter-photos { grid-template-columns: 1fr; gap: 65px; padding: 55px 8px 0; }
+ .chapter-photos .chapter-photo,.chapter-photos > :last-child:nth-child(odd) { grid-column: 1; margin-top: 0; aspect-ratio: 3 / 2; }
+ .chapter-photos .chapter-portrait { aspect-ratio: 4 / 5; width: 88%; justify-self: center; }
+ .chapter-lead::before,.chapter-photo::before { inset: -10px 12px 12px -10px; }
+ .chapter-photo:nth-child(even)::before { inset: 12px -8px -8px 12px; }
+}
+
+/* Titles belong above the copy, clear of the photograph. */
+.editorial-chapters .chapter-title { position: static; font: 900 clamp(54px,6.3vw,96px)/1.02 Auge,sans-serif; letter-spacing: -.04em; margin: 0 0 42px; text-align: left; }
+.editorial-chapters .chapter-copy h3 { font-size: clamp(31px,3.3vw,48px); }
+.chapter-video-cue { position: absolute; top: -40svh; left: 0; width: 1px; height: 1px; pointer-events: none; }
+@media(max-width:700px) {
+ .editorial-chapters .chapter-title { font-size: clamp(46px,12vw,70px); margin: 0 0 30px; }
+ .editorial-chapters .chapter-copy h3 { font-size: 33px; }
+}
+/* Day heading aligned to the photograph, instead of floating mid-column. */
+.chapter-sun .chapter-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 20px; padding-bottom: 32px; }
+.editorial-chapters .chapter-sun .chapter-title { margin-bottom: 64px; font-size: clamp(54px,6vw,91px); }
+.chapter-sun .chapter-copy h3 { margin-top: 24px; margin-bottom: 30px; }
+@media (max-width:700px) {
+ .chapter-sun .chapter-copy { display: block; padding: 35px 16px 15px; }
+ .editorial-chapters .chapter-sun .chapter-title { font-size: clamp(46px,12vw,70px); margin-bottom: 32px; }
+}

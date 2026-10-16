@@ -1,5 +1,5 @@
-import { useRef, type ReactNode } from "react";
-import { useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, type ReactNode } from "react";
+import { useMotionValue } from "framer-motion";
 import FestivalHero from "@/components/FestivalHero";
 import FestivalMosaic from "@/components/FestivalMosaic";
 import VideoBackdrop from "@/components/VideoBackdrop";
@@ -7,14 +7,40 @@ import type { SectionMode } from "@/lib/particles";
 
 export default function FestivalExperience({ mode, children }: { mode: SectionMode; children: ReactNode }) {
   const sunTarget = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: sunProgress } = useScroll({ target: sunTarget, offset: ["start end", "start start"] });
-  const sunOpacity = useTransform(sunProgress, [0, 1], [0, 1]);
   const nightTarget = useRef<HTMLDivElement>(null);
   const galleryTarget = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: galleryProgress } = useScroll({ target: galleryTarget, offset: ["start end", "start start"] });
-  const galleryOpacity = useTransform(galleryProgress, [0, 1], [0, 1]);
-  const { scrollYProgress } = useScroll({ target: nightTarget, offset: ["start end", "start start"] });
-  const nightOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const sunOpacity = useMotionValue(0);
+  const nightOpacity = useMotionValue(0);
+  const galleryOpacity = useMotionValue(0);
+
+  useEffect(() => {
+    let frame = 0;
+    // Measure actual viewport positions: nested and absolutely positioned cues
+    // must not inherit a different scroll coordinate system from the photo grid.
+    const progress = (element: HTMLElement | null) => element
+      ? Math.max(0, Math.min(1, 1 - element.getBoundingClientRect().top / window.innerHeight))
+      : 0;
+    const update = () => {
+      frame = 0;
+      sunOpacity.set(progress(sunTarget.current));
+      nightOpacity.set(progress(nightTarget.current));
+      galleryOpacity.set(progress(galleryTarget.current));
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    const observer = new ResizeObserver(schedule);
+    const experience = sunTarget.current?.parentElement;
+    if (experience) observer.observe(experience);
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    update();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, [sunOpacity, nightOpacity, galleryOpacity]);
+
   return <div className="festival-experience">
     <VideoBackdrop sunOpacity={sunOpacity} nightOpacity={nightOpacity} galleryOpacity={galleryOpacity} />
     <FestivalHero mode={mode} />
