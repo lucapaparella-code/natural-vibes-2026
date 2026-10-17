@@ -14,13 +14,13 @@ export const DAY_MOSAIC_PHOTOS: MosaicPhoto[] = [
   },
   {
     "id": "sun-selection-2",
-    "src": "/images/mosaic-2026/sun-selection-2-1200.webp",
-    "small": "/images/mosaic-2026/sun-selection-2-640.webp",
-    "full": "/sotto%20il%20sole%20/_MG_0191%20(1).webp",
+    "src": "/foto%2020266/8D7A8810.webp",
+    "small": "/foto%2020266/8D7A8810.webp",
+    "full": "/foto%2020266/8D7A8810.webp",
     "width": 1800,
     "height": 1200,
     "caption": {
-      "it": "Un pomeriggio nel verde",
+      "it": "Ballare di giorno tra gli alberi",
       "en": "Natural Vibes 2026 · Daytime 2"
     }
   },
